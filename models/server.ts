@@ -25,13 +25,15 @@ export default class Server {
         // CORS
         this.app.use(cors());
 
+        // Indica el tipo de dato que vendrá
+        this.app.use(express.json());
+
         // Directorio público
         this.app.use(express.static('public'));
     }
 
-    routes() {
+    routes() {        
 
-        this.app.use(express.json());
         this.app.use(this.usersPath, require('../routes/user'));
 
     }

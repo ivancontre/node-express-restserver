@@ -12,8 +12,12 @@ interface CustomResponse extends Response {
 
 export const getUser = async (req: Request, res: Response): Promise<CustomResponse> => {
 
+    const { q, name } = req.query;
+
     return res.status(201).json({
-        msg: 'User getted' 
+        msg: 'User getted',
+        q,
+        name
     });
 
 };
@@ -28,6 +32,8 @@ export const postUser = async (req: Request, res: Response): Promise<CustomRespo
 
 export const putUser = async (req: Request, res: Response): Promise<CustomResponse> => {
 
+    const id = req.params.id;
+
     return res.status(201).json({
         msg: 'User updated' 
     });
@@ -35,6 +41,8 @@ export const putUser = async (req: Request, res: Response): Promise<CustomRespon
 };
 
 export const deleteUser = async (req: Request, res: Response): Promise<CustomResponse> => {
+
+    const id = req.params.id;
 
     return res.status(201).json({
         msg: 'User deleted' 
@@ -44,6 +52,8 @@ export const deleteUser = async (req: Request, res: Response): Promise<CustomRes
 
 export const patchUser = async (req: Request, res: Response): Promise<CustomResponse> => {
 
+    const id = req.params.id;
+    
     return res.status(201).json({
         msg: 'User patched' 
     });

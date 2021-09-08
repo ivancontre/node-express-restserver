@@ -14,12 +14,12 @@ router.post(
 );
 
 router.put(
-    '/',
+    '/:id',
     putUser
 );
 
 router.delete(
-    '/',
+    '/:id',
     deleteUser
 );
 
